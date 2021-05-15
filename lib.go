@@ -5,7 +5,7 @@ import (
 )
 
 // Reference from : https://github.com/jmoiron/sqlx/blob/master/named.go#L313
-func Explain(sql string, args ...interface{}) string {
+func Explain(sql string, args ...interface{}) []byte {
 
 	qb := []byte(sql)
 
@@ -30,5 +30,5 @@ func Explain(sql string, args ...interface{}) string {
 		newByte = append(newByte, v)
 	}
 
-	return string(newByte)
+	return newByte
 }
